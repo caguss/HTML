@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var comNumber = 55;
+        var nGuesses = 0;
+
+        function guess() {
+            var result = "";
+
+            var number = parseInt(document.getElementById("user").value)
+            nGuesses++;
+
+            if (number == comNumber) result = "성공입니다.";
+            else if (number < comNumber) result = "낮습니다.";
+            else result = "높습니다.";
+
+            document.getElementById("result").value = result;
+            document.getElementById("guesses").value = nGuesses;
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>숫자 맞추기 게임</h2>
+    <form>
+        숫자:
+        <input type="text" id="user" size="5" />
+        <input type="button" value="확인" onclick="guess();" />
+        추측횟수:
+        <input type="text" id="guesses" size="5" />
+        힌트:
+        <input type="text" id="result" size="16" />
+    </form>
+</body>
+</html>
